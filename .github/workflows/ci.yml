@@ -14,8 +14,8 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - run: npm ci
 
@@ -48,7 +48,6 @@ jobs:
               - 'package.json'
               - 'package-lock.json'
               - 'mdx-components.*'
-              - '.github/workflows/**'
 
   deploy:
     needs: [ci, changes]
@@ -62,8 +61,8 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - run: npm ci
 
