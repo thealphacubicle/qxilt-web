@@ -23,9 +23,36 @@ jobs:
 
       - run: npm run build
 
-  deploy:
-    needs: ci
+  changes:
     if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    outputs:
+      deploy: ${{ steps.filter.outputs.deploy }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            deploy:
+              - 'app/**'
+              - 'components/**'
+              - 'content/**'
+              - 'lib/**'
+              - 'public/**'
+              - '*.config.*'
+              - '*.config.*.*'
+              - 'package.json'
+              - 'package-lock.json'
+              - 'mdx-components.*'
+              - '.github/workflows/**'
+
+  deploy:
+    needs: [ci, changes]
+    if: github.event_name == 'push' && needs.changes.outputs.deploy == 'true'
     runs-on: ubuntu-latest
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
