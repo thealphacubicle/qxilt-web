@@ -95,13 +95,13 @@ function CodeLine({ content }: { content: string }) {
     parts.push(<span key={key++} className="text-gray-400">.</span>)
     parts.push(<span key={key++} className="text-emerald-400">get_trust_score</span>)
     parts.push(<span key={key++} className="text-gray-400">(</span>)
-    parts.push(<span key={key++} className="text-amber-200">"agent_b"</span>)
+    parts.push(<span key={key++} className="text-amber-200">{'"agent_b"'}</span>)
     parts.push(<span key={key++} className="text-gray-400">)</span>)
   } else if (content.includes('agent_id')) {
     parts.push(<span key={key++} className="text-gray-400">    </span>)
     parts.push(<span key={key++} className="text-amber-300">agent_id</span>)
     parts.push(<span key={key++} className="text-gray-400">=</span>)
-    parts.push(<span key={key++} className="text-amber-200">"agent_b"</span>)
+    parts.push(<span key={key++} className="text-amber-200">{'"agent_b"'}</span>)
     parts.push(<span key={key++} className="text-gray-400">,</span>)
   } else if (content.includes('rating')) {
     parts.push(<span key={key++} className="text-gray-400">    </span>)
@@ -114,9 +114,9 @@ function CodeLine({ content }: { content: string }) {
     parts.push(<span key={key++} className="text-amber-300">context</span>)
     parts.push(<span key={key++} className="text-gray-400">=</span>)
     parts.push(<span key={key++} className="text-amber-200">{"{"}</span>)
-    parts.push(<span key={key++} className="text-amber-200">"task"</span>)
+    parts.push(<span key={key++} className="text-amber-200">{'"task"'}</span>)
     parts.push(<span key={key++} className="text-gray-400">: </span>)
-    parts.push(<span key={key++} className="text-amber-200">"code_review"</span>)
+    parts.push(<span key={key++} className="text-amber-200">{'"code_review"'}</span>)
     parts.push(<span key={key++} className="text-amber-200">{"}"}</span>)
     parts.push(<span key={key++} className="text-gray-400">)</span>)
   } else if (content.trim() === ')') {

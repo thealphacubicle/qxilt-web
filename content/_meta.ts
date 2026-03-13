@@ -1,4 +1,4 @@
-export default {
+const meta = {
   index: 'Introduction',
   introduction: 'Overview',
   quickstart: 'Quickstart',
@@ -8,3 +8,5 @@ export default {
   'api-reference': 'API Reference',
   examples: 'Examples',
 }
+
+export default meta

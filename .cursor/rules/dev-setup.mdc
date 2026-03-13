@@ -1,0 +1,15 @@
+---
+description: Local development setup and workflow for qxilt-web
+globs: ["package.json", "package-lock.json", ".vscode/**", ".devcontainer/**"]
+alwaysApply: false
+---
+
+# Development Setup
+
+When helping with local development:
+
+1. **On project open**: The "Setup: Pull & Install" task runs automatically (if enabled). It runs `git pull && npm install` to sync with remote and install dependencies.
+
+2. **After dependency changes**: If `package.json` or `package-lock.json` changes, run `npm install` or use the "Setup: Install Dependencies" task (Cmd/Ctrl+Shift+P → "Tasks: Run Task").
+
+3. **To enable auto-setup in Cursor**: Run "Tasks: Manage Automatic Tasks in Folder" from the command palette and select "Allow Automatic Tasks in Folder".
