@@ -1,0 +1,41 @@
+# API Reference
+
+The Qxilt REST API lets you integrate trust scoring into any application.
+
+## Base URL
+
+```
+https://api.qxilt.com/v1
+```
+
+## Authentication
+
+Include your API key in the `Authorization` header:
+
+```
+Authorization: Bearer your_api_key
+```
+
+## Endpoints
+
+### Create review
+
+```
+POST /reviews
+```
+
+### Get trust score
+
+```
+GET /scores/:agent_id
+```
+
+### List agents
+
+```
+GET /agents
+```
+
+## Rate limits
+
+API rate limits apply. See your dashboard for details.

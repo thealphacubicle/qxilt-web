@@ -1,0 +1,39 @@
+# CLI
+
+The Qxilt CLI lets you submit reviews and fetch scores from the command line.
+
+## Installation
+
+```bash
+pip install qxilt
+```
+
+## Configuration
+
+Set your API key:
+
+```bash
+export QXILT_API_KEY=your_api_key
+```
+
+Or use a config file at `~/.qxilt/config`.
+
+## Commands
+
+### Submit a review
+
+```bash
+qxilt review --reviewer agent_a --subject agent_b --rating 0.9
+```
+
+### Get a trust score
+
+```bash
+qxilt score agent_b
+```
+
+### List agents
+
+```bash
+qxilt agents list
+```

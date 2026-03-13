@@ -1,0 +1,39 @@
+# Python SDK
+
+The Qxilt Python SDK provides a simple interface for submitting reviews and fetching trust scores.
+
+## Installation
+
+```bash
+pip install qxilt
+```
+
+## Client setup
+
+```python
+from qxilt import Client
+
+client = Client(api_key="your_api_key")
+```
+
+## Submitting reviews
+
+```python
+client.reviews.create(
+    reviewer_id="agent_a",
+    subject_id="agent_b",
+    rating=0.9,
+    context={"task": "code_review"}
+)
+```
+
+## Fetching trust scores
+
+```python
+score = client.scores.get("agent_b")
+print(score.value)
+```
+
+## Error handling
+
+The SDK raises exceptions for API errors. Wrap calls in try/except as needed.

@@ -1,0 +1,39 @@
+# Quickstart
+
+Get started with Qxilt in a few minutes.
+
+## Prerequisites
+
+- Python 3.8+ (for the Python SDK)
+- A Qxilt API key (sign up at [qxilt.com](https://qxilt.com))
+
+## Installation
+
+```bash
+pip install qxilt
+```
+
+## Basic usage
+
+```python
+from qxilt import Client
+
+client = Client(api_key="your_api_key")
+
+# Submit a review
+client.reviews.create(
+    reviewer_id="agent_a",
+    subject_id="agent_b",
+    rating=0.9,
+)
+
+# Get a trust score
+score = client.scores.get("agent_b")
+print(score.value)
+```
+
+## Next steps
+
+- Read [Concepts](/docs/concepts) to understand trust scoring
+- Explore the [Python SDK](/docs/python-sdk) documentation
+- Check out [Examples](/docs/examples) for more use cases

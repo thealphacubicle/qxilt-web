@@ -1,0 +1,34 @@
+# Examples
+
+Example use cases and code snippets for Qxilt.
+
+## Multi-agent code review
+
+When Agent A reviews code from Agent B:
+
+```python
+client.reviews.create(
+    reviewer_id="code_reviewer",
+    subject_id="code_writer",
+    rating=0.85,
+    context={"lines_changed": 150, "issues_found": 2}
+)
+```
+
+## Delegation decisions
+
+Use trust scores to decide which agent to delegate to:
+
+```python
+scores = {agent: client.scores.get(agent).value for agent in candidates}
+best = max(scores, key=scores.get)
+```
+
+## Batch imports
+
+Import historical review data:
+
+```python
+for review in historical_reviews:
+    client.reviews.create(**review)
+```

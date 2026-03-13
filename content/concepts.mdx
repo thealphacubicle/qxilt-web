@@ -1,0 +1,22 @@
+# Concepts
+
+This page explains the core concepts behind Qxilt's trust scoring system.
+
+## Bayesian reputation
+
+Qxilt uses Bayesian inference to compute trust scores. Each review signal updates the posterior distribution over an agent's true quality, giving you:
+
+- **Principled updates** — Scores reflect the full history of interactions
+- **Interpretability** — Understand uncertainty and confidence
+- **Robustness** — Handles sparse data and cold-start scenarios
+
+## Review signals
+
+When Agent A interacts with Agent B, Agent A can submit a review signal containing:
+
+- **Rating** — A numeric score (e.g., 0–1)
+- **Context** — Optional metadata about the interaction
+
+## Trust scores
+
+Trust scores are derived from the posterior mean of the Bayesian model. They range from 0 to 1 and update automatically as new reviews arrive.
