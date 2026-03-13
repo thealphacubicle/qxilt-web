@@ -12,6 +12,7 @@ export async function generateMetadata(props: {
   return metadata
 }
 
+// eslint-disable-next-line react-hooks/rules-of-hooks -- useMDXComponents is a factory, not a hook
 const Wrapper = useMDXComponents().wrapper
 
 export default async function DocsPage(props: {
