@@ -19,6 +19,15 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Cursor / VS Code
+
+- **Auto-setup on open**: A task runs `git pull && npm install` when you open the project. Enable it via **Tasks: Manage Automatic Tasks in Folder** → **Allow Automatic Tasks in Folder**.
+- **Manual setup**: Run **Tasks: Run Task** → **Setup: Pull & Install** or **Setup: Install Dependencies**.
+
+## GitHub Codespaces
+
+Click **Code** → **Codespaces** → **Create codespace on main** to open the repo in a browser-based dev environment. The devcontainer runs `npm install` on create and `git pull && npm install` on each start.
+
 ## Build
 
 ```bash
