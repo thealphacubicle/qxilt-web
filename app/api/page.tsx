@@ -1,26 +1,36 @@
-import Link from 'next/link'
+'use client'
 
-export const metadata = {
-  title: 'API Reference',
-  description: 'Qxilt REST API reference documentation.',
-}
+import { ApiReferenceReact } from '@scalar/api-reference-react'
+import '@scalar/api-reference-react/style.css'
+
+const SCALAR_CUSTOM_CSS = `
+  :root {
+    --scalar-color-accent: #4f46e5;
+    --scalar-color-accent-2: #6366f1;
+    --scalar-background-accent: #4f46e515;
+    --scalar-background-accent-2: #6366f115;
+    --refs-content-max-width: min(100%, 1200px);
+  }
+  #api-reference-page [class*="start-row"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+`
 
 export default function ApiPage() {
   return (
-    <main className="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
-        API Reference
-      </h1>
-      <p className="mt-4 text-gray-600 dark:text-gray-400">
-        A custom OpenAPI-based API docs renderer is coming soon. For now, see the
-        API Reference documentation.
-      </p>
-      <Link
-        href="/docs/api-reference"
-        className="mt-6 inline-flex items-center rounded-lg bg-[#4F46E5] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-600 transition-colors"
-      >
-        View API docs
-      </Link>
+    <main id="api-reference-page" className="min-h-[calc(100vh-3.5rem)] w-full">
+      <ApiReferenceReact
+        configuration={{
+          url: '/api/openapi',
+          theme: 'purple',
+          layout: 'modern',
+          showDarkModeToggle: true,
+          proxyUrl: 'https://proxy.scalar.com',
+          customCss: SCALAR_CUSTOM_CSS,
+        }}
+      />
     </main>
   )
 }
